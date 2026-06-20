@@ -217,6 +217,6 @@ C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\runtimes\iossimulator-x64\na
 C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\runtimes\iossimulator-x86\native\e_sqlite3.a
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\projetoAeC.sourcelink.json
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\1capew2dje-{0}-2sklupvxgs-2sklupvxgs.gz
-C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\3hlsjn3h5o-{0}-vsimxx7rgk-vsimxx7rgk.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\kfm3zfno5o-{0}-wb9582eabw-wb9582eabw.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\4qrr1ffxhd-{0}-wb9582eabw-wb9582eabw.gz
+C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\3hlsjn3h5o-{0}-grqepyfgb5-grqepyfgb5.gz

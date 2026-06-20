@@ -28,23 +28,12 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
-                    <ul class="navbar-nav app-navbar__links">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
+                <div class="navbar-collapse collapse app-navbar__collapse">
+                    <ul class="navbar-nav app-navbar__menu">
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Enderecos" asp-action="Index">Endereços</a>
-                            </li>
-                        }
-                    </ul>
-                    <ul class="navbar-nav app-navbar__links">
-                        @if (User.Identity?.IsAuthenticated == true)
-                        {
-                            <li class="nav-item">
-                                <span class="navbar-text">Olá, @User.Identity.Name</span>
                             </li>
                             <li class="nav-item">
                                 <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
@@ -54,6 +43,9 @@
                         }
                         else
                         {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Register">Cadastrar</a>
                             </li>
