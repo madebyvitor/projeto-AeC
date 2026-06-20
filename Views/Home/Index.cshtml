@@ -1,8 +1,47 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "AddressHub";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<section class="home-hero">
+    <div class="home-hero__content">
+        <div class="brand-mark brand-mark--large" aria-hidden="true">
+            <span class="brand-mark__pin"></span>
+            <span class="brand-mark__road"></span>
+        </div>
+
+        <h1>Encontre, salve e exporte endereços com facilidade</h1>
+        <p>
+            Pesquise qualquer CEP, organize seus endereços e exporte quando precisar.
+            Uma ferramenta minimalista para sua produtividade diária.
+        </p>
+
+        <div class="home-hero__actions">
+            <a class="btn btn-home-primary" asp-controller="Auth" asp-action="Register">Começar agora</a>
+            <a class="btn btn-home-secondary" asp-controller="Auth" asp-action="Login">Fazer login</a>
+        </div>
+    </div>
+</section>
+
+<section class="home-features" aria-label="Recursos principais">
+    <article class="home-feature">
+        <h2>Busca por CEP</h2>
+        <p>Dados precisos e instantâneos para qualquer lugar do Brasil direto da base dos Correios.</p>
+    </article>
+
+    <article class="home-feature">
+        <h2>Salve seus endereços</h2>
+        <p>Organize sua lista pessoal para fácil acesso posterior.</p>
+    </article>
+
+    <article class="home-feature">
+        <h2>Exporte seus dados</h2>
+        <p>Leve suas informações para onde quiser no formato CSV.</p>
+    </article>
+</section>
+
+<section class="home-final-cta">
+    <div class="home-final-cta__card">
+        <h2>Pronto para organizar seus endereços?</h2>
+        <a class="btn btn-home-light" asp-controller="Auth" asp-action="Register">Crie sua conta</a>
+    </div>
+</section>

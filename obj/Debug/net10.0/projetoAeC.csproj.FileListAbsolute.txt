@@ -109,7 +109,6 @@ C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\scopedcss\bundle\projetoAeC.styles.css
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\scopedcss\projectbundle\projetoAeC.bundle.scp.css
-C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\3hlsjn3h5o-{0}-b9sayid5wm-b9sayid5wm.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\6jvg13xrr6-{0}-61n19gt1b8-61n19gt1b8.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\bhxgnyncp7-{0}-xtxxf3hu2r-xtxxf3hu2r.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\c7e0zxstf0-{0}-bqjiyaj88i-bqjiyaj88i.gz
@@ -171,8 +170,6 @@ C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\nxfsueqqon-{0}-2z
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\12y6zig3un-{0}-muycvpuwrr-muycvpuwrr.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\d3ywui6fur-{0}-87fc7y1x7t-87fc7y1x7t.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\z0h5mpcu09-{0}-mlv21k5csn-mlv21k5csn.gz
-C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\kfm3zfno5o-{0}-dzkejcuj36-dzkejcuj36.gz
-C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\4qrr1ffxhd-{0}-dzkejcuj36-dzkejcuj36.gz
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\staticwebassets.development.json
@@ -220,3 +217,6 @@ C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\runtimes\iossimulator-x64\na
 C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\runtimes\iossimulator-x86\native\e_sqlite3.a
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\projetoAeC.sourcelink.json
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\1capew2dje-{0}-2sklupvxgs-2sklupvxgs.gz
+C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\3hlsjn3h5o-{0}-vsimxx7rgk-vsimxx7rgk.gz
+C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\kfm3zfno5o-{0}-wb9582eabw-wb9582eabw.gz
+C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\compressed\4qrr1ffxhd-{0}-wb9582eabw-wb9582eabw.gz
