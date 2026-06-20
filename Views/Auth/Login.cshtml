@@ -1,0 +1,50 @@
+@model projetoAeC.ViewModels.Auth.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <h1 class="h3 mb-3">Entrar</h1>
+
+        @if (TempData["SuccessMessage"] is string successMessage)
+        {
+            <div class="alert alert-success" role="alert">
+                @successMessage
+            </div>
+        }
+
+        <form asp-action="Login" method="post" novalidate>
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Usuario" class="form-label"></label>
+                <input asp-for="Usuario" class="form-control" autocomplete="username" />
+                <span asp-validation-for="Usuario" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Senha" class="form-label"></label>
+                <input asp-for="Senha" class="form-control" autocomplete="current-password" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+
+            <div class="form-check mb-3">
+                <input asp-for="ManterConectado" class="form-check-input" />
+                <label asp-for="ManterConectado" class="form-check-label"></label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>
+
+        <p class="mt-3 mb-0">
+            Ainda não tem conta?
+            <a asp-action="Register">Cadastre-se</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
