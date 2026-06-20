@@ -16,4 +16,6 @@ public class Usuario
 
     [Required]
     public string SenhaHash { get; set; } = string.Empty;
+
+    public ICollection<Endereco> Enderecos { get; set; } = new List<Endereco>();
 }

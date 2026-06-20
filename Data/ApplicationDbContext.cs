@@ -11,6 +11,7 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<Usuario> Usuarios => Set<Usuario>();
+    public DbSet<Endereco> Enderecos => Set<Endereco>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -38,6 +39,58 @@ public class ApplicationDbContext : DbContext
 
             entity.HasIndex(usuario => usuario.UsuarioNome)
                 .IsUnique();
+        });
+
+        modelBuilder.Entity<Endereco>(entity =>
+        {
+            entity.ToTable("Enderecos");
+
+            entity.HasKey(endereco => endereco.Id);
+
+            entity.Property(endereco => endereco.Cep)
+                .HasColumnName("cep")
+                .HasMaxLength(9)
+                .IsRequired();
+
+            entity.Property(endereco => endereco.Logradouro)
+                .HasColumnName("logradouro")
+                .HasMaxLength(150)
+                .IsRequired();
+
+            entity.Property(endereco => endereco.Numero)
+                .HasColumnName("numero")
+                .HasMaxLength(20)
+                .IsRequired();
+
+            entity.Property(endereco => endereco.Complemento)
+                .HasColumnName("complemento")
+                .HasMaxLength(100);
+
+            entity.Property(endereco => endereco.Bairro)
+                .HasColumnName("bairro")
+                .HasMaxLength(100)
+                .IsRequired();
+
+            entity.Property(endereco => endereco.Cidade)
+                .HasColumnName("cidade")
+                .HasMaxLength(100)
+                .IsRequired();
+
+            entity.Property(endereco => endereco.Uf)
+                .HasColumnName("uf")
+                .HasMaxLength(2)
+                .IsRequired();
+
+            entity.Property(endereco => endereco.Ibge)
+                .HasColumnName("ibge")
+                .HasMaxLength(20);
+
+            entity.HasOne(endereco => endereco.Usuario)
+                .WithMany(usuario => usuario.Enderecos)
+                .HasForeignKey(endereco => endereco.UsuarioId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            entity.HasIndex(endereco => endereco.UsuarioId);
         });
     }
 }

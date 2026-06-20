@@ -1,0 +1,26 @@
+@model Endereco
+
+@{
+    ViewData["Title"] = "Excluir endereço";
+}
+
+<h1 class="h3 mb-3">Excluir endereço</h1>
+
+<div class="alert alert-warning" role="alert">
+    Tem certeza que deseja excluir este endereço?
+</div>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p class="mb-1"><strong>@Model.Logradouro, @Model.Numero</strong></p>
+        <p class="mb-1">@Model.Bairro - @Model.Cidade/@Model.Uf</p>
+        <p class="mb-0">CEP: @Model.Cep</p>
+    </div>
+</div>
+
+<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+    <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,25 @@
+@model projetoAeC.ViewModels.Enderecos.EnderecoViewModel
+
+@{
+    ViewData["Title"] = "Novo endereço";
+}
+
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <h1 class="h3 mb-3">Novo endereço</h1>
+
+        <form asp-action="Create" method="post" novalidate>
+            <partial name="_EnderecoForm" model="Model" />
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">Salvar</button>
+                <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/enderecos.js" asp-append-version="true"></script>
+}
