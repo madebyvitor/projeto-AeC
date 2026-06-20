@@ -12,8 +12,7 @@
             logradouro: formulario.querySelector('[data-viacep-field="logradouro"]'),
             bairro: formulario.querySelector('[data-viacep-field="bairro"]'),
             localidade: formulario.querySelector('[data-viacep-field="localidade"]'),
-            uf: formulario.querySelector('[data-viacep-field="uf"]'),
-            ibge: formulario.querySelector('[data-viacep-field="ibge"]')
+            uf: formulario.querySelector('[data-viacep-field="uf"]')
         };
     }
 
@@ -66,10 +65,6 @@
 
         if (campos.uf) {
             campos.uf.value = dados.uf || "";
-        }
-
-        if (campos.ibge) {
-            campos.ibge.value = dados.ibge || "";
         }
     }
 
