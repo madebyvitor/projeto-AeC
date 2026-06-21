@@ -1,10 +1,11 @@
 @model Endereco
-@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
 @removeTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Excluir endereço";
-    var antiforgeryToken = Antiforgery.GetAndStoreTokens(Context).RequestToken;
+    var antiforgery = Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions
+        .GetRequiredService<Microsoft.AspNetCore.Antiforgery.IAntiforgery>(Context.RequestServices);
+    var antiforgeryToken = antiforgery.GetAndStoreTokens(Context).RequestToken;
 }
 
 <h1 class="h3 mb-3">Excluir endereço</h1>
