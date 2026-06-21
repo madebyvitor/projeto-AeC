@@ -479,3 +479,16 @@ C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\projetoAeC.pdb
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\projetoAeC.genruntimeconfig.cache
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\ref\projetoAeC.dll
 C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\projetoAeC.exe
+C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\projetoAeC.Tests\obj\project.assets.json
+C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\projetoAeC.Tests\obj\projetoAeC.Tests.csproj.nuget.dgspec.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\appsettings.Development.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\appsettings.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.Tests\obj\project.assets.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.Tests\obj\projetoAeC.Tests.csproj.nuget.dgspec.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.staticwebassets.runtime.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.staticwebassets.endpoints.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.exe
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.deps.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.runtimeconfig.json
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.dll
+C:\Users\Vitor\AppData\Local\Temp\projetoAeC-test-output\projetoAeC.pdb
