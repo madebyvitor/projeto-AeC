@@ -1,24 +1,26 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var isHomePage = string.Equals(ViewContext.RouteData.Values["controller"]?.ToString(), "Home", StringComparison.OrdinalIgnoreCase)
+        && string.Equals(ViewContext.RouteData.Values["action"]?.ToString(), "Index", StringComparison.OrdinalIgnoreCase);
+    var antiforgery = Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions
+        .GetRequiredService<Microsoft.AspNetCore.Antiforgery.IAntiforgery>(Context.RequestServices);
+    var logoutToken = antiforgery.GetAndStoreTokens(Context).RequestToken;
+}
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AddressHub</title>
-    <script type="importmap"></script>
-    <link rel="icon" type="image/svg+xml" href="~/favicon.svg" />
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/projetoAeC.styles.css" asp-append-version="true" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/site.css" />
+    <link rel="stylesheet" href="/projetoAeC.styles.css" />
 </head>
-@{
-    var isHomePage = string.Equals(ViewContext.RouteData.Values["controller"]?.ToString(), "Home", StringComparison.OrdinalIgnoreCase)
-        && string.Equals(ViewContext.RouteData.Values["action"]?.ToString(), "Index", StringComparison.OrdinalIgnoreCase);
-}
 <body class="@(isHomePage ? "home-page" : null)">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm app-navbar">
             <div class="container-fluid app-navbar__inner">
-                <a class="navbar-brand app-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand app-brand" href="/">
                     <span class="brand-mark brand-mark--small" aria-hidden="true">
                         <span class="brand-mark__pin"></span>
                         <span class="brand-mark__road"></span>
@@ -34,24 +36,25 @@
                         @if (User.Identity?.IsAuthenticated == true)
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Enderecos" asp-action="Index">Endereços</a>
+                                <a class="nav-link" href="/Enderecos">Endereços</a>
                             </li>
                             <li class="nav-item">
-                                <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+                                <!form action="/Auth/Logout" method="post" class="d-inline">
+                                    <input name="__RequestVerificationToken" type="hidden" value="@logoutToken" />
                                     <button type="submit" class="btn btn-link nav-link">Sair</button>
-                                </form>
+                                </!form>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Register">Cadastrar</a>
+                                <a class="nav-link" href="/Auth/Register">Cadastrar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Auth" asp-action="Login">Entrar</a>
+                                <a class="nav-link" href="/Auth/Login">Entrar</a>
                             </li>
                         }
                     </ul>
@@ -70,9 +73,9 @@
             &copy; 2026 - AddressHub
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/site.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
