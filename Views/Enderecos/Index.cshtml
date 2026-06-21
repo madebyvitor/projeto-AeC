@@ -1,4 +1,5 @@
 @model IEnumerable<Endereco>
+@removeTagHelper Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Endereços";
@@ -11,8 +12,8 @@
         <p class="text-muted mb-0">Gerencie os endereços salvos na sua conta.</p>
     </div>
     <div class="d-flex gap-2">
-        <a asp-action="ExportCsv" class="btn btn-outline-secondary">Exportar CSV</a>
-        <a asp-action="Create" class="btn btn-primary">Novo endereço</a>
+        <a href="/Enderecos/ExportCsv" class="btn btn-outline-secondary">Exportar CSV</a>
+        <a href="/Enderecos/Create" class="btn btn-primary">Novo endereço</a>
     </div>
 </div>
 
@@ -54,9 +55,9 @@ else
                         <td>@endereco.Cidade/@endereco.Uf</td>
                         <td class="text-end">
                             <div class="btn-group" role="group" aria-label="Ações do endereço">
-                                <a asp-action="Details" asp-route-id="@endereco.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
-                                <a asp-action="Edit" asp-route-id="@endereco.Id" class="btn btn-sm btn-outline-primary">Editar</a>
-                                <a asp-action="Delete" asp-route-id="@endereco.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
+                                <a href="/Enderecos/Details/@endereco.Id" class="btn btn-sm btn-outline-secondary">Detalhes</a>
+                                <a href="/Enderecos/Edit/@endereco.Id" class="btn btn-sm btn-outline-primary">Editar</a>
+                                <a href="/Enderecos/Delete/@endereco.Id" class="btn btn-sm btn-outline-danger">Excluir</a>
                             </div>
                         </td>
                     </tr>
