@@ -1,0 +1,19 @@
+# SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Build
+bin/
+obj/
+
+# User-specific files
+.vs/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Environment variables
+.env
