@@ -21,6 +21,8 @@ O projeto é uma aplicação web completa, desenvolvida para gerenciar um catál
     * *Por quê?* Ele elimina a necessidade de escrever queries SQL manuais para as operações de CRUD, prevenindo ataques de SQL Injection e facilitando a interação com o banco de dados diretamente através de classes C#.
 * **Abordagem Code-First & Migrations:** 
     * *Por quê?* Em vez de modelar o banco de dados primeiro, as tabelas foram geradas a partir das classes C# (`Models/Usuario.cs` e `Models/Endereco.cs`). Isso versiona a estrutura do banco junto com o código-fonte (visível na pasta `Migrations/`).
+* **Script das tabelas:**
+  * *O script que foi usado para criação das tabelas está em `database/scripts`. 
 
 ### 3.2. Banco de Dados
 * **SQLite (Desenvolvimento) / SQL Server (Estrutura):**
