@@ -20,73 +20,73 @@ build_property.TargetFrameworkVersion = v10.0
 build_property.EntryPointFilePath = 
 build_property.RootNamespace = projetoAeC
 build_property.RootNamespace = projetoAeC
-build_property.ProjectDir = c:\Users\Vitor\Desktop\projetoAeC\
+build_property.ProjectDir = C:\Users\Vitor\Desktop\projetoAeC\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 10.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\Users\Vitor\Desktop\projetoAeC
+build_property.MSBuildProjectDirectory = C:\Users\Vitor\Desktop\projetoAeC
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Auth/Login.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Auth/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Auth/Register.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Auth/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Create.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29zXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Delete.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29zXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Details.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29zXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Edit.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29zXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Index.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/_EnderecoForm.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Enderecos/_EnderecoForm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW5kZXJlY29zXF9FbmRlcmVjb0Zvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Home/Index.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Home/Privacy.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Shared/Error.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/_ViewImports.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/_ViewStart.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/Vitor/Desktop/projetoAeC/Views/Shared/_Layout.cshtml]
+[C:/Users/Vitor/Desktop/projetoAeC/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-l8gm3gu670
