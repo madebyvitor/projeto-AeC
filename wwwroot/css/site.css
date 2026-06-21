@@ -30,6 +30,30 @@ a {
   color: var(--color-aux);
 }
 
+@keyframes homeFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes homeScaleIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
 .btn:focus,
 .btn:active:focus,
 .btn-link.nav-link:focus,
@@ -75,6 +99,15 @@ a {
   color: var(--color-primary);
 }
 
+.home-page .app-brand {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.home-page .app-brand:hover,
+.home-page .app-brand:focus {
+  transform: translateY(-1px);
+}
+
 .app-navbar__collapse {
   flex-grow: 0;
 }
@@ -99,6 +132,15 @@ a {
 .app-navbar .nav-link:hover,
 .app-navbar .nav-link:focus {
   color: var(--color-aux);
+}
+
+.home-page .app-navbar .nav-link {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.home-page .app-navbar .nav-link:hover,
+.home-page .app-navbar .nav-link:focus {
+  transform: translateY(-1px);
 }
 
 .page-greeting {
@@ -147,6 +189,7 @@ a {
   width: 5.9rem;
   height: 5.9rem;
   margin: 0 auto 1.8rem;
+  animation: homeScaleIn 700ms ease both;
 }
 
 .brand-mark__pin {
@@ -220,6 +263,7 @@ a {
   font-weight: 900;
   line-height: 0.98;
   letter-spacing: -0.06em;
+  animation: homeFadeUp 700ms ease 120ms both;
 }
 
 .home-hero p {
@@ -229,6 +273,7 @@ a {
   font-size: 1.08rem;
   font-weight: 600;
   line-height: 1.65;
+  animation: homeFadeUp 700ms ease 220ms both;
 }
 
 .home-hero__actions {
@@ -237,6 +282,7 @@ a {
   justify-content: center;
   gap: 1rem;
   margin-top: 2.3rem;
+  animation: homeFadeUp 700ms ease 320ms both;
 }
 
 .btn-home-primary,
@@ -247,6 +293,7 @@ a {
   padding: 0.78rem 1.3rem;
   font-size: 0.78rem;
   font-weight: 800;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .btn-home-primary {
@@ -260,6 +307,8 @@ a {
   border-color: var(--color-aux);
   color: var(--color-white);
   background: var(--color-aux);
+  box-shadow: 0 0.85rem 1.8rem rgba(9, 144, 120, 0.22);
+  transform: translateY(-2px);
 }
 
 .btn-home-secondary {
@@ -272,6 +321,8 @@ a {
 .btn-home-secondary:focus {
   color: var(--color-white);
   background: var(--color-primary);
+  box-shadow: 0 0.85rem 1.8rem rgba(1, 75, 67, 0.18);
+  transform: translateY(-2px);
 }
 
 .home-features {
@@ -286,6 +337,24 @@ a {
 .home-feature {
   max-width: 285px;
   margin: 0 auto;
+  animation: homeFadeUp 650ms ease both;
+  transition: transform 180ms ease;
+}
+
+.home-feature:nth-child(1) {
+  animation-delay: 80ms;
+}
+
+.home-feature:nth-child(2) {
+  animation-delay: 180ms;
+}
+
+.home-feature:nth-child(3) {
+  animation-delay: 280ms;
+}
+
+.home-feature:hover {
+  transform: translateY(-4px);
 }
 
 .home-feature h2 {
@@ -321,6 +390,7 @@ a {
   border-radius: 1.5rem;
   background: var(--color-primary);
   text-align: center;
+  animation: homeFadeUp 700ms ease both;
 }
 
 .home-final-cta h2 {
@@ -345,6 +415,8 @@ a {
   border-color: var(--color-aux);
   color: var(--color-white);
   background: var(--color-aux);
+  box-shadow: 0 0.85rem 1.8rem rgba(1, 75, 67, 0.18);
+  transform: translateY(-2px);
 }
 
 .footer {
@@ -391,5 +463,25 @@ a {
     min-height: 17rem;
     border-radius: 1rem;
     padding: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .brand-mark--large,
+  .home-page .home-hero h1,
+  .home-page .home-hero p,
+  .home-page .home-hero__actions,
+  .home-page .home-feature,
+  .home-page .home-final-cta__card {
+    animation: none;
+  }
+
+  .home-page .app-brand,
+  .home-page .app-navbar .nav-link,
+  .home-page .btn-home-primary,
+  .home-page .btn-home-secondary,
+  .home-page .btn-home-light,
+  .home-page .home-feature {
+    transition: none;
   }
 }

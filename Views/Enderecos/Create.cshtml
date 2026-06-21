@@ -5,6 +5,9 @@
     ViewData["Title"] = "Novo endereço";
     string? ErrorFor(string fieldName) => ViewData.ModelState[fieldName]?.Errors.FirstOrDefault()?.ErrorMessage;
     var modelOnlyErrors = ViewData.ModelState[string.Empty]?.Errors;
+    var antiforgery = Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions
+        .GetRequiredService<Microsoft.AspNetCore.Antiforgery.IAntiforgery>(Context.RequestServices);
+    var antiforgeryToken = antiforgery.GetAndStoreTokens(Context).RequestToken;
 }
 
 <div class="row justify-content-center">
@@ -12,6 +15,8 @@
         <h1 class="h3 mb-3">Novo endereço</h1>
 
         <form action="/Enderecos/Create" method="post" novalidate>
+            <input name="__RequestVerificationToken" type="hidden" value="@antiforgeryToken" />
+
             @if (modelOnlyErrors?.Count > 0)
             {
                 <div class="text-danger mb-3 validation-summary-errors" data-valmsg-summary="true">

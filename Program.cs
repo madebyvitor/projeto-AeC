@@ -1,3 +1,5 @@
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using projetoAeC.Data;
@@ -15,6 +17,7 @@ builder.Services
     .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
+        options.Cookie.Name = "projetoAeC.Auth";
         options.Cookie.HttpOnly = true;
         options.Cookie.SameSite = SameSiteMode.Lax;
         options.ExpireTimeSpan = TimeSpan.FromHours(8);
@@ -22,6 +25,29 @@ builder.Services
         options.LogoutPath = "/Auth/Logout";
         options.AccessDeniedPath = "/Auth/Login";
         options.SlidingExpiration = true;
+        options.Events = new CookieAuthenticationEvents
+        {
+            OnValidatePrincipal = async context =>
+            {
+                var usuarioIdClaim = context.Principal?.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                if (!int.TryParse(usuarioIdClaim, out var usuarioId))
+                {
+                    context.RejectPrincipal();
+                    await context.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                    return;
+                }
+
+                var dbContext = context.HttpContext.RequestServices.GetRequiredService<ApplicationDbContext>();
+                var usuarioExiste = await dbContext.Usuarios.AnyAsync(usuario => usuario.Id == usuarioId);
+
+                if (!usuarioExiste)
+                {
+                    context.RejectPrincipal();
+                    await context.HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                }
+            }
+        };
     });
 builder.Services.AddAuthorization();
 
