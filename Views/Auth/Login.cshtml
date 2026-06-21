@@ -1,7 +1,19 @@
 @model projetoAeC.ViewModels.Auth.LoginViewModel
+@using Microsoft.AspNetCore.Mvc.ModelBinding
 
 @{
     ViewData["Title"] = "Login";
+    var antiforgery = Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions
+        .GetRequiredService<Microsoft.AspNetCore.Antiforgery.IAntiforgery>(Context.RequestServices);
+    var loginToken = antiforgery.GetAndStoreTokens(Context).RequestToken;
+    var usuarioState = ViewData.ModelState[nameof(Model.Usuario)];
+    var senhaState = ViewData.ModelState[nameof(Model.Senha)];
+    var manterConectadoState = ViewData.ModelState[nameof(Model.ManterConectado)];
+    var usuarioValue = usuarioState?.AttemptedValue ?? Model?.Usuario ?? string.Empty;
+    var manterConectadoValue = bool.TryParse(manterConectadoState?.AttemptedValue, out var manterConectado)
+        ? manterConectado
+        : Model?.ManterConectado == true;
+    var modelErrors = ViewData.ModelState[string.Empty]?.Errors ?? Enumerable.Empty<ModelError>();
 }
 
 <div class="row justify-content-center">
@@ -15,24 +27,54 @@
             </div>
         }
 
-        <form asp-action="Login" method="post" novalidate>
-            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <form action="/Auth/Login" method="post" novalidate>
+            <input name="__RequestVerificationToken" type="hidden" value="@loginToken" />
 
-            <div class="mb-3">
-                <label asp-for="Usuario" class="form-label"></label>
-                <input asp-for="Usuario" class="form-control" autocomplete="username" />
-                <span asp-validation-for="Usuario" class="text-danger"></span>
+            <div class="text-danger mb-3">
+                @foreach (var error in modelErrors)
+                {
+                    <div>@error.ErrorMessage</div>
+                }
             </div>
 
             <div class="mb-3">
-                <label asp-for="Senha" class="form-label"></label>
-                <input asp-for="Senha" class="form-control" autocomplete="current-password" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
+                <label class="form-label" for="Usuario">Usuário</label>
+                <input class="form-control"
+                       autocomplete="username"
+                       data-val="true"
+                       data-val-required="Informe o usuário."
+                       id="Usuario"
+                       name="Usuario"
+                       type="text"
+                       value="@usuarioValue" />
+                <span class="text-danger"
+                      data-valmsg-for="Usuario"
+                      data-valmsg-replace="true">@(usuarioState?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="Senha">Senha</label>
+                <input class="form-control"
+                       autocomplete="current-password"
+                       data-val="true"
+                       data-val-required="Informe a senha."
+                       id="Senha"
+                       name="Senha"
+                       type="password" />
+                <span class="text-danger"
+                      data-valmsg-for="Senha"
+                      data-valmsg-replace="true">@(senhaState?.Errors.FirstOrDefault()?.ErrorMessage)</span>
             </div>
 
             <div class="form-check mb-3">
-                <input asp-for="ManterConectado" class="form-check-input" />
-                <label asp-for="ManterConectado" class="form-check-label"></label>
+                <input class="form-check-input"
+                       id="ManterConectado"
+                       name="ManterConectado"
+                       type="checkbox"
+                       value="true"
+                       @(manterConectadoValue ? "checked" : null) />
+                <input name="ManterConectado" type="hidden" value="false" />
+                <label class="form-check-label" for="ManterConectado">Manter conectado</label>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Entrar</button>
@@ -40,11 +82,12 @@
 
         <p class="mt-3 mb-0">
             Ainda não tem conta?
-            <a asp-action="Register">Cadastre-se</a>
+            <a href="/Auth/Register">Cadastre-se</a>
         </p>
     </div>
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }
