@@ -1,7 +1,10 @@
 @model Endereco
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Antiforgery
+@removeTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Excluir endereço";
+    var antiforgeryToken = Antiforgery.GetAndStoreTokens(Context).RequestToken;
 }
 
 <h1 class="h3 mb-3">Excluir endereço</h1>
@@ -18,9 +21,11 @@
     </div>
 </div>
 
-<form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+<form action="/Enderecos/Delete" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="@antiforgeryToken" />
+    <input name="id" type="hidden" value="@Model.Id" />
     <div class="d-flex gap-2">
         <button type="submit" class="btn btn-danger">Excluir</button>
-        <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+        <a href="/Enderecos" class="btn btn-outline-secondary">Cancelar</a>
     </div>
 </form>
