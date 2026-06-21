@@ -41,7 +41,16 @@ O projeto é uma aplicação web completa, desenvolvida para gerenciar um catál
     * *Com o objetivo de deixar o projeto mais completo, criei também o diagrama relacional que pode ser visualizado no arquivo `docs/Diagrama/relational`.
 * **Template Figma**
     * *O projeto do front-end feito no Figma também foi anexado, podendo ser visualizado na pasta `docs/Figma/`.
- 
+  
+## 5. Testes Unitários
+
+### 5.1. Segurança e Autenticação (AuthService)
+* **Registro:** Validação do fluxo de criação de novos usuários com sucesso e bloqueio de cadastros com nomes de usuário já existentes (prevenção de duplicidade).
+* **Login:** Confirmação de liberação de acesso com credenciais corretas e garantia de bloqueio ao informar senhas ou usuários incorretos.
+  
+### 5.2. Gestão de Endereços (EnderecosController)
+* **Isolamento de Dados:** Validação de segurança assegurando que a listagem de endereços (Index) retorne restritamente os registros pertencentes ao usuário autenticado na sessão atual.
+* **Criação de Endereços:** Testes de redirecionamento em caso de sucesso na criação e validação de recusa/reexibição do formulário quando os dados submetidos são inválidos (ModelState inválido).
 
 ## Como executar o projeto
 
