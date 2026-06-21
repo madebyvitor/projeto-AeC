@@ -478,3 +478,4 @@ C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\refint\projetoAeC.dll
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\projetoAeC.pdb
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\projetoAeC.genruntimeconfig.cache
 C:\Users\Vitor\Desktop\projetoAeC\obj\Debug\net10.0\ref\projetoAeC.dll
+C:\Users\Vitor\Desktop\projetoAeC\bin\Debug\net10.0\projetoAeC.exe

@@ -1,38 +1,100 @@
 @model projetoAeC.ViewModels.Auth.RegisterViewModel
+@using Microsoft.AspNetCore.Mvc.ModelBinding
+@removeTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     ViewData["Title"] = "Cadastro";
+    var antiforgery = Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions
+        .GetRequiredService<Microsoft.AspNetCore.Antiforgery.IAntiforgery>(Context.RequestServices);
+    var registerToken = antiforgery.GetAndStoreTokens(Context).RequestToken;
+    var nomeState = ViewData.ModelState[nameof(Model.Nome)];
+    var usuarioState = ViewData.ModelState[nameof(Model.Usuario)];
+    var senhaState = ViewData.ModelState[nameof(Model.Senha)];
+    var confirmarSenhaState = ViewData.ModelState[nameof(Model.ConfirmarSenha)];
+    var nomeValue = nomeState?.AttemptedValue ?? Model?.Nome ?? string.Empty;
+    var usuarioValue = usuarioState?.AttemptedValue ?? Model?.Usuario ?? string.Empty;
+    var modelErrors = ViewData.ModelState[string.Empty]?.Errors ?? Enumerable.Empty<ModelError>();
 }
 
 <div class="row justify-content-center">
     <div class="col-md-6 col-lg-5">
         <h1 class="h3 mb-3">Criar conta</h1>
 
-        <form asp-action="Register" method="post" novalidate>
-            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <form action="/Auth/Register" method="post" novalidate>
+            <input name="__RequestVerificationToken" type="hidden" value="@registerToken" />
 
-            <div class="mb-3">
-                <label asp-for="Nome" class="form-label"></label>
-                <input asp-for="Nome" class="form-control" autocomplete="name" />
-                <span asp-validation-for="Nome" class="text-danger"></span>
+            <div class="text-danger mb-3">
+                @foreach (var error in modelErrors)
+                {
+                    <div>@error.ErrorMessage</div>
+                }
             </div>
 
             <div class="mb-3">
-                <label asp-for="Usuario" class="form-label"></label>
-                <input asp-for="Usuario" class="form-control" autocomplete="username" />
-                <span asp-validation-for="Usuario" class="text-danger"></span>
+                <label class="form-label" for="Nome">Nome</label>
+                <input class="form-control"
+                       autocomplete="name"
+                       data-val="true"
+                       data-val-length="O nome deve ter no máximo 100 caracteres."
+                       data-val-length-max="100"
+                       data-val-required="Informe o nome."
+                       id="Nome"
+                       name="Nome"
+                       type="text"
+                       value="@nomeValue" />
+                <span class="text-danger"
+                      data-valmsg-for="Nome"
+                      data-valmsg-replace="true">@(nomeState?.Errors.FirstOrDefault()?.ErrorMessage)</span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="Senha" class="form-label"></label>
-                <input asp-for="Senha" class="form-control" autocomplete="new-password" />
-                <span asp-validation-for="Senha" class="text-danger"></span>
+                <label class="form-label" for="Usuario">Usuário</label>
+                <input class="form-control"
+                       autocomplete="username"
+                       data-val="true"
+                       data-val-length="O usuário deve ter no máximo 100 caracteres."
+                       data-val-length-max="100"
+                       data-val-required="Informe o usuário."
+                       id="Usuario"
+                       name="Usuario"
+                       type="text"
+                       value="@usuarioValue" />
+                <span class="text-danger"
+                      data-valmsg-for="Usuario"
+                      data-valmsg-replace="true">@(usuarioState?.Errors.FirstOrDefault()?.ErrorMessage)</span>
             </div>
 
             <div class="mb-3">
-                <label asp-for="ConfirmarSenha" class="form-label"></label>
-                <input asp-for="ConfirmarSenha" class="form-control" autocomplete="new-password" />
-                <span asp-validation-for="ConfirmarSenha" class="text-danger"></span>
+                <label class="form-label" for="Senha">Senha</label>
+                <input class="form-control"
+                       autocomplete="new-password"
+                       data-val="true"
+                       data-val-length="A senha deve ter entre 6 e 100 caracteres."
+                       data-val-length-max="100"
+                       data-val-length-min="6"
+                       data-val-required="Informe a senha."
+                       id="Senha"
+                       name="Senha"
+                       type="password" />
+                <span class="text-danger"
+                      data-valmsg-for="Senha"
+                      data-valmsg-replace="true">@(senhaState?.Errors.FirstOrDefault()?.ErrorMessage)</span>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="ConfirmarSenha">Confirmar senha</label>
+                <input class="form-control"
+                       autocomplete="new-password"
+                       data-val="true"
+                       data-val-equalto="A confirmação deve ser igual à senha."
+                       data-val-equalto-other="*.Senha"
+                       data-val-required="Confirme a senha."
+                       id="ConfirmarSenha"
+                       name="ConfirmarSenha"
+                       type="password" />
+                <span class="text-danger"
+                      data-valmsg-for="ConfirmarSenha"
+                      data-valmsg-replace="true">@(confirmarSenhaState?.Errors.FirstOrDefault()?.ErrorMessage)</span>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
@@ -40,11 +102,12 @@
 
         <p class="mt-3 mb-0">
             Já tem uma conta?
-            <a asp-action="Login">Entrar</a>
+            <a href="/Auth/Login">Entrar</a>
         </p>
     </div>
 </div>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial" />
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
 }
