@@ -41,3 +41,53 @@ O projeto é uma aplicação web completa, desenvolvida para gerenciar um catál
     * *Com o objetivo de deixar o projeto mais completo, criei também o diagrama relacional que pode ser visualizado no arquivo `docs/Diagrama/relational`.
 * **Template Figma**
     * *O projeto do front-end feito no Figma também foi anexado, podendo ser visualizado na pasta `docs/Figma/`.
+ 
+
+## Como executar o projeto
+
+### Pré-requisitos
+
+Antes de iniciar, certifique-se de ter instalado:
+
+- .NET SDK 10.0 ou superior
+- Git
+
+### 1. Clone o repositório
+
+```bash
+git clone https://github.com/madebyvitor/projeto-AeC.git
+```
+
+### 2. Restaurar as dependências
+
+```bash
+dotnet restore
+```
+
+### 3. Criar o banco de dados
+
+O projeto utiliza **SQLite** juntamente com o **Entity Framework Core**. O banco de dados é criado automaticamente a partir das migrations.
+
+Execute:
+
+```bash
+dotnet ef database update
+```
+
+Será criado o arquivo:
+
+```text
+ProjetoAeC.db
+```
+
+### 4. Executar a aplicação
+
+```bash
+dotnet run
+```
+
+Após a inicialização, acesse:
+
+```text
+http://localhost:5212
+```
