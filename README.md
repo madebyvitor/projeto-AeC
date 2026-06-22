@@ -43,6 +43,7 @@ O projeto é uma aplicação web completa, desenvolvida para gerenciar um catál
     * *O projeto do front-end feito no Figma também foi anexado, podendo ser visualizado na pasta `docs/Figma/`.
   
 ## 5. Testes Unitários
+Suíte de testes unitários desenvolvida com **xUnit** e **FluentAssertions**, focada nas funcionalidades mais críticas do sistema e utilizando um banco de dados em memória (Microsoft.EntityFrameworkCore.InMemory).
 
 ### 5.1. Segurança e Autenticação (AuthService)
 * **Registro:** Validação do fluxo de criação de novos usuários com sucesso e bloqueio de cadastros com nomes de usuário já existentes (prevenção de duplicidade).
